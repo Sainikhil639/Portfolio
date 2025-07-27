@@ -107,6 +107,10 @@
             .menu-toggle {
                 display: flex;
             }
+
+            .section {
+                margin: 1rem !important;
+            }
         }
 
         header {
@@ -114,15 +118,14 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            gap: 2rem;
-            padding: 2rem;
+            gap: 1rem;
         }
 
         header img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            object-fit: cover;
+            object-fit: initial;
             border: 3px solid #0fccce;
         }
 
@@ -142,9 +145,17 @@
             text-align: center;
         }
 
-        header p {
+        header p,
+        header a,
+        header i  {
             font-size: 1.1rem;
-            color: #ddd;
+            color: #ddd !important;
+            text-decoration-line: none;
+        }
+
+        header a:hover {
+            color: #0fccce !important;
+            text-decoration-line: underline;
         }
 
         .section {
@@ -255,17 +266,30 @@
         </div>
     </nav>
     <header>
-        <!-- <img src="C:\Users\saini\Desktop\Nikhil\Accenture\Passport Pic New - Nikhil.jpg" alt="Profile Picture" /> -->
         <div>
-            <div>
+            <img src="C:\Users\saini\Desktop\Nikhil\Accenture\Passport Pic New - Nikhil.jpg" alt="Profile Picture" />
+        </div>
+
+        <div>
+            <div style="text-align: center;">
                 <h1>SAI NIKHIL BATTULA</h1>
-                <p>Microsoft Dynamics CRM Analyst at <strong>Accenture</strong> </p>
+                <p>Microsoft Dynamics CRM Analyst at <a target="_blank"
+                        href="https://www.linkedin.com/company/accenture/">Accenture</a></p>
             </div>
             <div>
                 <h3 style="text-align: center; font-size: 2rem; color: #0fccce;" id="counter-experience">0</h3>
                 <p>Years of Experience</p>
             </div>
+            <div>
+            <p><i class="fas fa-envelope" style="color: #0fccce; margin-right: 8px;"></i><a target="_blank"
+                    href="mailto:sainikhil063@gmail.com" style="color:#0fccce">sainikhil063@gmail.com</a></p><br>
+            <p><i class="fas fa-phone" style="color: #0fccce; margin-right: 8px;"></i><a href="tel:+917989512229"
+                    style="color:#0fccce">+91 7989512229</a></p><br>
+            <p><i class="fas fa-map-marker-alt" style="color: #0fccce; margin-right: 8px;"></i>Hyderabad, India</p>
         </div>
+        </div>
+
+        
     </header>
 
     <section class="section" id="summary" data-aos="fade-up">
@@ -403,14 +427,14 @@
         </div>
     </section> -->
 
-    <section class="section" id="contact" data-aos="fade-up">
+    <!-- <section class="section" id="contact" data-aos="fade-up">
         <h2>CONTACT</h2>
         <p><i class="fas fa-envelope" style="color: #0fccce; margin-right: 8px;"></i><a target="_blank"
                 href="mailto:sainikhil063@gmail.com" style="color:#0fccce">sainikhil063@gmail.com</a></p>
         <p><i class="fas fa-phone" style="color: #0fccce; margin-right: 8px;"></i><a href="tel:+917989512229"
                 style="color:#0fccce">+91 7989512229</a></p>
         <p><i class="fas fa-map-marker-alt" style="color: #0fccce; margin-right: 8px;"></i>Hyderabad, India</p>
-    </section>
+    </section> -->
 
     <footer>
         &copy; 2025 Made by <strong>Sai Nikhil Battula.</strong>
