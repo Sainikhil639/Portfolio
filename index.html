@@ -423,21 +423,24 @@
     <section class="section" id="certifications" data-aos="fade-up">
         <h2>CERTIFICATIONS</h2>
         <ul>
-            <a target="_blank" href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/F816735F0407A9A8?sharingId=F86E09FFD72D1191">
-                <li>PL-900 : Microsoft Certified Power Platform Fundamentals</li>
-            </a>
-            <a target="_blank" href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/F1156641512640AC?sharingId=F86E09FFD72D1191">
-                <li>MB-910 : Microsoft Certified Dynamics 365 Fundamentals (CRM)</li>
-            </a>
-            <a target="_blank" href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/32DF5876C89F5166?sharingId=F86E09FFD72D1191">
-                <li>MB-230 : Microsoft Dynamics 365 Customer Service Functional Consultant</li>
-            </a>
-            <a target="_blank" href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/2A507ED806E76682?sharingId=F86E09FFD72D1191">
-                <li>AI-900 : Microsoft Certified AI Fundamentals</li>
-            </a>
-            <a target="_blank" href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/45F802974EE67FCE?sharingId=F86E09FFD72D1191">
-                <li>AI-102 : Microsoft Certified Azure AI Engineer Associate</li>
-            </a>
+            <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/F816735F0407A9A8?sharingId=F86E09FFD72D1191"
+                    onclick="openPopup(this.href); return false;">PL-900 : Microsoft Certified Power Platform
+                    Fundamentals</a></li>
+
+            <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/F1156641512640AC?sharingId=F86E09FFD72D1191"
+                    onclick="openPopup(this.href); return false;">MB-910 : Microsoft Certified Dynamics 365 Fundamentals
+                    (CRM)</a></li>
+
+            <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/32DF5876C89F5166?sharingId=F86E09FFD72D1191"
+                    onclick="openPopup(this.href); return false;">MB-230 : Microsoft Dynamics 365 Customer Service
+                    Functional Consultant</a></li>
+
+            <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/2A507ED806E76682?sharingId=F86E09FFD72D1191"
+                    onclick="openPopup(this.href); return false;">AI-900 : Microsoft Certified AI Fundamentals</a></li>
+
+            <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/SaiNikhilBattula/45F802974EE67FCE?sharingId=F86E09FFD72D1191"
+                    onclick="openPopup(this.href); return false;">AI-102 : Microsoft Certified Azure AI Engineer
+                    Associate</a></li>
         </ul>
     </section>
 
@@ -502,6 +505,19 @@
 
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        function openPopup(url) {
+            const width = 800;
+            const height = 600;
+            const left = (screen.width - width) / 2;
+            const top = (screen.height - height) / 2;
+
+            window.open(
+                url,
+                'popupWindow',
+                `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`
+            );
         }
 
         function animateCounter(id, target, duration = 1000) {
