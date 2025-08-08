@@ -26,6 +26,17 @@
             padding-top: 80px;
         }
 
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: #0fcbcee2;
+            width: 0;
+            z-index: 9999;
+            transition: width 0.2s ease-out;
+        }
+
         nav {
             position: fixed;
             top: 0;
@@ -222,6 +233,7 @@
         .buttons a:hover,
         .buttons button:hover {
             background-color: #0aa4a3;
+            color: #10e3e3;
             color: #fff;
         }
 
@@ -246,7 +258,8 @@
         }
 
         .floating-button:hover {
-            background-color: #18aeae;
+            /* background-color: #18aeae; */
+            color: #10e3e3;
         }
 
         footer {
@@ -259,10 +272,16 @@
         .highlight:hover {
             color: #0fccce !important;
         }
+
+        footer a {
+            color: #0fccce;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
+    <div class="progress-bar"></div>
     <nav>
         <h1 onclick="scrollToTop()">SAI NIKHIL BATTULA</h1>
         <div class="menu-toggle" onclick="toggleMenu()">
@@ -305,25 +324,32 @@
         </div>
     </header>
 
+    <div id="greeting"
+        style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; padding: 20px; border-radius: 10px; text-align: center; z-index: 1000; opacity: 1; transition: opacity 1s;">
+    </div>
+    <div id="overlay"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 999; opacity: 1; transition: opacity 2s;">
+    </div>
+
     <section class="section" id="summary" data-aos="fade-up">
         <h2>PROFESSIONAL SUMMARY</h2>
         <p>Dynamic and technically skilled CRM Developer with 3 years of professional experience in Microsoft Dynamics
             365 CRM, adept at handling complex client-side scripting scenarios. Proven expertise in developing and
-            deploying custom Plugins using C# to enhance Dynamics CRM capabilities and integrate with external systems.<br/><br/>
+            deploying custom Plugins using C# to enhance Dynamics CRM capabilities and integrate with external
+            systems.<br /><br />
 
             Experienced in the Power Platform suite—including Power Apps, Power Automate, and Business Rules—with
             hands-on involvement in designing and optimizing system workflows in D365. Skilled in core CRM
             customizations such as form tailoring, ribbon customization, site map configuration, and JavaScript library
-            integrations for enhanced client-side functionality.<br/><br/>
+            integrations for enhanced client-side functionality.<br /><br />
 
             Proficient in utilizing tools like XRM Toolbox and Ribbon Workbench for advanced UI customization, command
             bar enhancements, and CRM administration tasks. In addition to CRM work, experienced in developing custom
             webpages using HTML, CSS, and JavaScript to support tailored UI/UX requirements or extend CRM capabilities
-            beyond out-of-the-box functionality.<br/><br/>
+            beyond out-of-the-box functionality.<br /><br />
 
             Well-versed in Agile methodologies, with practical experience using Azure Boards for tracking user stories,
             managing sprint progress, bug fixing, and maintaining comprehensive project documentation.</p>
-        
     </section>
 
     <section class="section" id="career" data-aos="fade-up">
@@ -335,10 +361,13 @@
             <li>Developed and deployed custom Plugins in C# to automate business processes and integrate with external
                 systems.</li>
             <li>Implemented complex ribbon customizations and command bar logic using Ribbon Workbench.</li>
+            <li>Designed custom web resources using HTML, CSS, and JavaScript for enhanced UI/UX and business-specific
+                requirements.</li>
             <li>Created and maintained business rules, Power Automate flows, and JavaScript libraries for dynamic form
                 behaviours and validations.</li>
             <li>Project: Bank Project</li>
-            <li>Environment: Dynamics 365 CRM, Power Apps, Power Automate, Plugins (C#), JavaScript, Ribbon Workbench</li>
+            <li>Environment: Dynamics 365 CRM, Power Apps, Power Automate, Plugins (C#), JavaScript, HTML, CSS,
+                XRMToolBox, Ribbon Workbench</li>
             <li>Team Size: 18 </li>
         </ul>
         <br />
@@ -352,8 +381,6 @@
                 logic execution.</li>
             <li>Followed Agile practices with Azure DevOps for sprint planning, bug tracking, and user story management.
             </li>
-            <li>Designed custom web resources using HTML, CSS, and JavaScript for enhanced UI/UX and business-specific
-                requirements.</li>
             <li>Used XRMToolBox for metadata documentation, bulk updates, and component migration.</li>
             <li>Project: Siemens LDA</li>
             <li>Environment: Dynamics 365 CRM, Power Apps, Power Automate, Plugins (C#), JavaScript, HTML, CSS,
@@ -366,17 +393,17 @@
         <h2>SKILLS</h2>
         <ul>
             <li>Microsoft Dynamics 365 CRM</li>
-            <li>Power Apps</li>
-            <li>Power Automate</li>
+            <li>Power Apps & Power Automate</li>
             <li>Plugins (C#)</li>
-            <li>Html, Css & JavaScript</li>
-            <li>CRM customization </li>
             <li>JavaScript</li>
-            <li>Business Rules & Workflows</li>
-            <li>XRMToolBox </li>
-            <li>Ribbon Workbench </li>
+            <li>Business Rules and Workflows</li>
+            <li>Custom Webpages(Html, Css & JavaScript)</li>
+            <li>XRMToolBox, Ribbon Workbench</li>
+            <li>Azure DevOps, Agile</li>
             <li>Bug fixing and debugging</li>
             <li>Project documentation</li>
+            <li>CRM customization </li>
+            <li>Team collaboration and communication </li>
         </ul>
     </section>
 
@@ -415,7 +442,7 @@
 
     <section class="section" id="education" data-aos="fade-up">
         <h2>EDUCATION</h2>
-        <p><strong>B.Tech in Electrical & Electronics Engineering (EEE)</strong><br><a target="_blank"
+        <p><strong>B.Tech in Electrical & Electronics</strong><br><a target="_blank"
                 href="https://www.linkedin.com/school/raghu-engineering-college">Raghu Engineering College</a>, Jun 2021
         </p>
     </section>
@@ -472,6 +499,10 @@
 
     <!-- Floating Buttons -->
     <div>
+        <a href="#" class="floating-button" title="Print Resume" style="right: 227px;" onclick="window.print()">
+            <i class="fas fa-print"></i>
+        </a>
+
         <a href="tel:+917989512229" title="Contact Me" class="floating-button" style="right: 160px;">
             <i class="fas fa-phone"></i>
         </a>
@@ -487,11 +518,72 @@
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
+        // const footer = document.querySelector('footer');
+        // footer.innerHTML = `&copy; ${new Date().getFullYear()} Made by <strong>Sai Nikhil Battula.</strong>`;
+
+        const greeting = document.getElementById('greeting');
+        const overlay = document.getElementById('overlay');
+        const hour = new Date().getHours();
+        if (hour < 12) {
+            greeting.innerHTML = 'Good Morning! <br/> Welcome to my portfolio!';
+        } else if (hour < 18) {
+            greeting.innerHTML = 'Good Afternoon! <br/> Welcome to my portfolio!';
+        } else {
+            greeting.innerHTML = 'Good Evening! <br/> Welcome to my portfolio!';
+        }
+
+        // Fade out greeting and overlay after 3 seconds
+        setTimeout(() => {
+            greeting.style.opacity = '0';
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                greeting.style.display = 'none';
+                overlay.style.display = 'none';
+            }, 500); // Wait for the fade-out transition to complete
+        }, 1000);
+
         AOS.init({ duration: 1000, once: true });
 
         function scrollToTop() {
             window.scrollTo(0, 0);
         }
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.querySelector('.progress-bar').style.width = scrollPercent + '%';
+        });
+
+        // Adjust scroll position to account for fixed nav height
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offset = 80;
+                const targetPosition = targetElement.offsetTop - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const headerText = "SAI NIKHIL BATTULA";
+        const headerElement = document.querySelector('nav h1');
+        let index = 0;
+
+        function typeEffect() {
+            if (index < headerText.length) {
+                headerElement.textContent += headerText.charAt(index);
+                index++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+
+        headerElement.textContent = "";
+        typeEffect();
 
         document.addEventListener('click', function (e) {
             const nav = document.getElementById('navLinks');
@@ -508,8 +600,8 @@
         }
 
         function openPopup(url) {
-            const width = 800;
-            const height = 600;
+            const width = 700;
+            const height = 400;
             const left = (screen.width - width) / 2;
             const top = (screen.height - height) / 2;
 
