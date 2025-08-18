@@ -499,7 +499,7 @@
 
     <!-- Floating Buttons -->
     <div>
-        <a href="#" class="floating-button" title="Print Resume" style="right: 227px;" onclick="window.print()">
+        <a href="#" class="floating-button" title="Print Resume" style="right: 227px;" onclick="downloadPdf()">
             <i class="fas fa-print"></i>
         </a>
 
@@ -610,6 +610,13 @@
                 'popupWindow',
                 `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`
             );
+        }
+
+        function downloadPdf() {
+            window.scrollTo(0, document.body.scrollHeight);
+            setTimeout(() => {
+                window.print();
+            }, 500);
         }
 
         function animateCounter(id, target, duration = 1000) {
