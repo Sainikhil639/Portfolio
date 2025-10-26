@@ -333,7 +333,7 @@
 
     <section class="section" id="summary" data-aos="fade-up">
         <h2>PROFESSIONAL SUMMARY</h2>
-        <p>Dynamic and technically skilled CRM Developer with 3 years of professional experience in Microsoft Dynamics
+        <p>Dynamic and technically skilled CRM Developer with <span id="experience-span"></span> years of professional experience in Microsoft Dynamics
             365 CRM, adept at handling complex client-side scripting scenarios. Proven expertise in developing and
             deploying custom Plugins using C# to enhance Dynamics CRM capabilities and integrate with external
             systems.<br /><br />
@@ -524,6 +524,11 @@
         const greeting = document.getElementById('greeting');
         const overlay = document.getElementById('overlay');
         const hour = new Date().getHours();
+
+        const startDate = new Date(2021, 10, 29);
+        const headerText = "SAI NIKHIL BATTULA";
+        const headerElement = document.querySelector('nav h1');
+
         if (hour < 12) {
             greeting.innerHTML = 'Good Morning! <br/> Welcome to my portfolio!';
         } else if (hour < 18) {
@@ -570,10 +575,7 @@
             });
         });
 
-        const headerText = "SAI NIKHIL BATTULA";
-        const headerElement = document.querySelector('nav h1');
         let index = 0;
-
         function typeEffect() {
             if (index < headerText.length) {
                 headerElement.textContent += headerText.charAt(index);
@@ -622,19 +624,29 @@
         function animateCounter(id, target, duration = 1000) {
             const el = document.getElementById(id);
             let start = 0;
-            const increment = target / (duration / 30);
+            const numericTarget = parseFloat(target.toFixed(1));
+            const increment = numericTarget / (duration / 30);
             const counter = setInterval(() => {
                 start += increment;
-                if (start >= target) {
-                    el.textContent = target;
+                if (start >= numericTarget) {
+                    el.textContent = numericTarget.toFixed(1);
                     clearInterval(counter);
                 } else {
-                    el.textContent = Math.ceil(start);
+                    el.textContent = (Math.floor(start * 10) / 10).toFixed(1);
                 }
             }, 30);
         }
+
         window.addEventListener('DOMContentLoaded', () => {
-            animateCounter('counter-experience', 3.8);
+            const currentDate = new Date();
+            const diffTime = Math.abs(currentDate - startDate);
+            const diffYears = diffTime / (1000 * 60 * 60 * 24 * 365.25);
+            const experienceYears = Math.round(diffYears * 10) / 10;
+            const titleElement = document.getElementById('experience-span');
+            if (titleElement) {
+                titleElement.textContent = `${experienceYears.toFixed(1)}`;
+            }
+            animateCounter('counter-experience', experienceYears);
         });
 
         //Pdf Download
