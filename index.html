@@ -498,7 +498,7 @@
     </footer>
 
     <!-- Floating Buttons -->
-    <div>
+    <div id="floating-buttons-container">
         <a href="#" class="floating-button" title="Print Resume" style="right: 227px;" onclick="downloadPdf()">
             <i class="fas fa-print"></i>
         </a>
@@ -615,9 +615,16 @@
         }
 
         function downloadPdf() {
+            const floatingButtons = document.getElementById('floating-buttons-container');
+            if (floatingButtons) {
+                floatingButtons.style.display = 'none';
+            }
             window.scrollTo(0, document.body.scrollHeight);
             setTimeout(() => {
                 window.print();
+                if (floatingButtons) {
+                    floatingButtons.style.display = 'block';
+                }
             }, 500);
         }
 
@@ -634,7 +641,7 @@
                 } else {
                     el.textContent = (Math.floor(start * 10) / 10).toFixed(1);
                 }
-            }, 30);
+            }, 20);
         }
 
         window.addEventListener('DOMContentLoaded', () => {
