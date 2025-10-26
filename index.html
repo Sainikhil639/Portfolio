@@ -277,12 +277,29 @@
             color: #0fccce;
             text-decoration: none;
         }
+        @media print {
+            /* This class will hide any element from the printout */
+            .no-print {
+                display: none !important;
+            }
+            
+            /* Optional: Improve print layout */
+            body {
+                padding-top: 0 !important;
+                background: #fff !important; /* Use a white background for printing */
+            }
+            .section {
+                box-shadow: none !important;
+                margin: 2rem 0 !important;
+            }
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="progress-bar"></div>
-    <nav id="head-nav">
+    <div class="progress-bar no-print"></div>
+    <nav id="head-nav" class="no-print">
         <h1 onclick="scrollToTop()">SAI NIKHIL BATTULA</h1>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
@@ -498,7 +515,7 @@
     </footer>
 
     <!-- Floating Buttons -->
-    <div id="floating-buttons-container">
+    <div id="floating-buttons-container" class="no-print">
         <a href="#" class="floating-button" title="Print Resume" style="right: 227px;" onclick="downloadPdf()">
             <i class="fas fa-print"></i>
         </a>
@@ -614,26 +631,32 @@
             );
         }
 
+        // function downloadPdf() {
+        //     const floatingButtons = document.getElementById('floating-buttons-container');
+        //     const headerButtons = document.getElementById('head-nav');
+
+        //     if (floatingButtons) {
+        //         floatingButtons.style.display = 'none';
+        //     }
+        //     if (headerButtons) {
+        //         headerButtons.style.display = 'none';
+        //     }
+
+        //     window.scrollTo(0, document.body.scrollHeight);
+        //     setTimeout(() => {
+        //         window.print();
+        //         if (floatingButtons) {
+        //             floatingButtons.style.display = 'block';
+        //         }
+        //         if (headerButtons) {
+        //             headerButtons.style.display = 'flex';
+        //         }
+        //     }, 500);
+        // }
         function downloadPdf() {
-            const floatingButtons = document.getElementById('floating-buttons-container');
-            const headerButtons = document.getElementById('head-nav');
-
-            if (floatingButtons) {
-                floatingButtons.style.display = 'none';
-            }
-            if (headerButtons) {
-                headerButtons.style.display = 'none';
-            }
-
             window.scrollTo(0, document.body.scrollHeight);
             setTimeout(() => {
                 window.print();
-                if (floatingButtons) {
-                    floatingButtons.style.display = 'block';
-                }
-                if (headerButtons) {
-                    headerButtons.style.display = 'flex';
-                }
             }, 500);
         }
 
