@@ -282,7 +282,7 @@
 
 <body>
     <div class="progress-bar"></div>
-    <nav>
+    <nav id="head-nav">
         <h1 onclick="scrollToTop()">SAI NIKHIL BATTULA</h1>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
@@ -616,14 +616,23 @@
 
         function downloadPdf() {
             const floatingButtons = document.getElementById('floating-buttons-container');
+            const headerButtons = document.getElementById('head-nav');
+
             if (floatingButtons) {
                 floatingButtons.style.display = 'none';
             }
+            if (headerButtons) {
+                headerButtons.style.display = 'none';
+            }
+
             window.scrollTo(0, document.body.scrollHeight);
             setTimeout(() => {
                 window.print();
                 if (floatingButtons) {
                     floatingButtons.style.display = 'block';
+                }
+                if (headerButtons) {
+                    headerButtons.style.display = 'flex';
                 }
             }, 500);
         }
