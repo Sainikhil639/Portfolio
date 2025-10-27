@@ -279,8 +279,6 @@
         }
 
         @media print {
-
-            /* This class will hide any element from the printout */
             .no-print {
                 display: none !important;
             }
@@ -289,11 +287,9 @@
                 display: block !important;
             }
 
-            /* Optional: Improve print layout */
             body {
                 padding-top: 0 !important;
                 background: #fff !important;
-                /* Use a white background for printing */
                 color: #000 !important;
             }
 
@@ -330,9 +326,22 @@
                 text-align: start !important;
             }
 
-            header {
-                background-color: #0fccce !important;
-                text-align: start !important;
+            .headerBackground {
+                padding-top: 30px !important;
+                padding-bottom: 30px !important;
+                background: #078686 !important;
+                color: #fff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                border-radius: 5px;
+            }
+
+            .headerBackground h1,
+            .headerBackground h3,
+            .headerBackground p,
+            .headerBackground a {
+                color: #fff !important;
+                font-weight: 600;
             }
         }
     </style>
@@ -362,8 +371,8 @@
         <div class="no-print">
             <img src="Passport Pic New - Nikhil.jpg" alt="Profile Picture" />
         </div>
-        <div>
-            <div style="text-align: center;">
+        <div class="headerBackground">
+            <div class="align-print" style="text-align: center;">
                 <h1>SAI NIKHIL BATTULA</h1>
                 <p>Microsoft Dynamics CRM Analyst at <a target="_blank"
                         href="https://www.linkedin.com/company/accenture/">Accenture</a></p>
@@ -734,6 +743,11 @@
         //     }, 500);
         // }
         function downloadPdf() {
+            const originalTitle = document.title;
+            document.title = "Sai Nikhil Battula - Resume";
+            window.addEventListener('afterprint', () => {
+                document.title = originalTitle;
+            }, { once: true });
             window.scrollTo(0, document.body.scrollHeight);
             setTimeout(() => {
                 window.print();
