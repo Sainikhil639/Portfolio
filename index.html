@@ -277,47 +277,64 @@
             color: #0fccce;
             text-decoration: none;
         }
+
         @media print {
+
             /* This class will hide any element from the printout */
             .no-print {
                 display: none !important;
             }
+
             .yes-print {
                 display: block !important;
             }
-            
+
             /* Optional: Improve print layout */
             body {
                 padding-top: 0 !important;
-                background: #fff !important; /* Use a white background for printing */
+                background: #fff !important;
+                /* Use a white background for printing */
                 color: #000 !important;
             }
+
             .section {
                 box-shadow: none !important;
                 margin: 2rem 0 !important;
             }
-            h1{
+
+            h1 {
                 color: #0fccce !important;
             }
-            h2{
+
+            h2 {
                 color: #0fccce !important;
             }
-            h3{
+
+            h3 {
                 color: #0fccce !important;
             }
-            
-            p, li, a,
-            header p, header a,
-            section a, footer a {
+
+            p,
+            li,
+            a,
+            header p,
+            header a,
+            section a,
+            footer a {
                 color: #000 !important;
             }
-             .section {
+
+            .section {
                 padding: 0.5rem !important;
                 margin: 0.5rem !important;
                 text-align: start !important;
             }
-        }
 
+            header {
+                background-color: #0fccce !important;
+                text-align: start !important;
+            }
+        }
     </style>
 </head>
 
@@ -342,7 +359,7 @@
         </div>
     </nav>
     <header>
-        <div>
+        <div class="no-print">
             <img src="Passport Pic New - Nikhil.jpg" alt="Profile Picture" />
         </div>
         <div>
@@ -364,11 +381,20 @@
             </div>
             <div class="yes-print" style="display: none;">
                 <p>
-                     <span><i class="fas fa-envelope" style="color: #0fccce; margin-right: 8px;"></i><a target="_blank"
-                        href="mailto:sainikhil063@gmail.com" style="color:#0fccce">sainikhil063@gmail.com   </a></span>
-                    <span><i class="fas fa-phone" style="color: #0fccce; margin-right: 8px;"></i><a href="tel:+917989512229"
-                            style="color:#0fccce">+91 7989512229    </a></span>
-                    <span><i class="fas fa-map-marker-alt" style="color: #0fccce; margin-right: 8px;"></i>Hyderabad, India</span>
+                    <span><i class="fas fa-envelope" style="color: #0fccce; margin-right: 10px;"></i><a target="_blank"
+                            href="mailto:sainikhil063@gmail.com"
+                            style="color:#0fccce; margin-right: 10px;">sainikhil063@gmail.com
+                        </a></span>
+                    <span><i class="fas fa-phone" style="color: #0fccce; margin-right: 8px;"></i><a
+                            href="tel:+917989512229" style="color:#0fccce; margin-right: 10px;">+91 7989512229
+                        </a></span>
+                    <span><i class="fas fa-map-marker-alt" style="color: #0fccce; margin-right: 8px;"></i>Hyderabad,
+                        India</span>
+                    <span><a target="_blank" href="https://www.linkedin.com/in/sai-nikhil-898060175/"
+                            style="color:#0fccce; margin-left: 12px;"><i class="fa-brands fa-linkedin"
+                                style="color: #0fccce"></i>
+                            Sai Nikhil
+                        </a></span>
                 </p>
             </div>
         </div>
@@ -383,7 +409,8 @@
 
     <section class="section" id="summary" data-aos="fade-up">
         <h2>PROFESSIONAL SUMMARY</h2>
-        <p>Dynamic and technically skilled CRM Developer with <span id="experience-span"></span> years of professional experience in Microsoft Dynamics
+        <p>Dynamic and technically skilled CRM Developer with <span id="experience-span"></span> years of professional
+            experience in Microsoft Dynamics
             365 CRM, adept at handling complex client-side scripting scenarios. Proven expertise in developing and
             deploying custom Plugins using C# to enhance Dynamics CRM capabilities and integrate with external
             systems.<br /><br />
@@ -524,7 +551,8 @@
     <section class="section yes-print" id="certifications" data-aos="fade-up" style="display: none;">
         <h2>Declaration</h2>
         <p>
-            I hereby declare that the information provided above is true and accurate to the best of my knowledge and belief.
+            I hereby declare that the information provided above is true and accurate to the best of my knowledge and
+            belief.
         </p></br>
         <ul>
             <li>
@@ -731,7 +759,7 @@
         window.addEventListener('DOMContentLoaded', () => {
             const currentDate = new Date();
             const dd = String(currentDate.getDate()).padStart(2, '0');
-            const mm = String(currentDate.getMonth() + 1).padStart(2, '0'); 
+            const mm = String(currentDate.getMonth() + 1).padStart(2, '0');
             const yyyy = currentDate.getFullYear();
 
             const diffTime = Math.abs(currentDate - startDate);
@@ -748,18 +776,18 @@
             animateCounter('counter-experience', experienceYears);
         });
 
-        //Pdf Download
-        document.getElementById('downloadBtn').addEventListener('click', function () {
-            const spinner = document.getElementById('spinner');
-            spinner.style.display = 'inline-block';
-            const link = document.createElement('a');
-            link.href = 'Sai%20Nikhil%20Resume%202025.pdf';
-            link.download = 'Sai Nikhil Resume 2025.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            setTimeout(() => spinner.style.display = 'none', 1500);
-        });
+        // //Pdf Download
+        // document.getElementById('downloadBtn').addEventListener('click', function () {
+        //     const spinner = document.getElementById('spinner');
+        //     spinner.style.display = 'inline-block';
+        //     const link = document.createElement('a');
+        //     link.href = 'Sai%20Nikhil%20Resume%202025.pdf';
+        //     link.download = 'Sai Nikhil Resume 2025.pdf';
+        //     document.body.appendChild(link);
+        //     link.click();
+        //     document.body.removeChild(link);
+        //     setTimeout(() => spinner.style.display = 'none', 1500);
+        // });
 
     </script>
 </body>
